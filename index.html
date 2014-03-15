@@ -1,7 +1,130 @@
 <!DOCTYPE html>
 <html>
 	<head><title>Binary Clock</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+	function updateClock(){
+		var pm=0;
+		$('#hra').show();
+		$('#hra').hide();
+		var date=new Date;
+		var d=date.toTimeString().split(' ')[0];
+		var spl=d.split(':');
+		var hr=parseInt(spl[0]),min=parseInt(spl[1]),sec=parseInt(spl[2]);
+		if(hr>12){
+			hr-=12;
+			pm=1;
+			$('#hrp').show();
+			$('#hra').hide();
+		}
+		var hrb=hr.toString(2),minb=min.toString(2),secb=sec.toString(2);
+		while(hrb.length<4) hrb="0"+hrb;
+		while(minb.length<6) minb="0"+minb;
+		while(secb.length<6) secb="0"+secb;
+		//	$("#time").html(hrb+':'+minb+':'+secb);
+		for (var index=0;index<4;++index){
+			if(hrb[index]=="1"){
+				$("#hr"+(index+1)).css("background-color","#5037F0");
+			}
+			else{
+				$("#hr"+(index+1)).css("background-color","#B3A8F7");
+			}
+		}
+		for (var index=0;index<6;++index){
+			if(minb[index]=="1"){
+				$("#min"+(index+1)).css("background-color","#FA4141");
+			}
+			else{
+				$("#min"+(index+1)).css("background-color","#F79999");
+			}
+		}
+		for (var index=0;index<6;++index){
+			if(secb[index]=="1"){
+				$("#sec"+(index+1)).css("background-color","#302F30");
+			}
+			else{
+				$("#sec"+(index+1)).css("background-color","#B0A9AA");
+			}
+		}
+		$("#actime").html(hr+":"+min+":"+sec);
+	}
+	$(document).ready(function(){
+		setInterval(function(){updateClock();},1000);
+	});
+
+
+	</script>
+	<style type="text/css">
+		#time{
+			line-height: 40px;
+		}
+		#timediv{
+		
+		}
+		#actime{
+			float:right;
+		}
+		.tod{	
+
+			color:#B53600;
+			float :left;
+			height: 30px;
+			width: 30px;
+			margin:3px;
+			text-align: center;
+		}
+		.hr{
+			float :left;
+			height: 30px;
+			width:30px;
+			background-color:#B3A8F7;
+			margin:3px;
+		}
+		.min{
+			float :left;
+			height: 30px;
+			width:30px;
+			background-color: #F79999;
+			margin:3px;
+		}
+		.sec{
+			float:left;
+			height: 30px;
+			width:30px;
+			background-color: #B0A9AA;
+			margin:3px;
+		}
+
+	</style>
 	<body>
-		A Binary Clock, could be used as footer !
-	</body>
+		<div id='content' >
+			Binary Clock, Could be used as a footer for web pages !.. Repo <a href='http://github.com/cool-mist/cool-mist.github.io'>Here</a>
+		</div>
+		<div id='timediv'>
+			<div id='time' >
+				<div class='hr' id='hr1'></div>
+				<div class='hr' id='hr2'></div>
+				<div class='hr' id='hr3'></div>
+				<div class='hr' id='hr4'></div>
+				<div class='tod' id='hra'>AM</div>
+				<div class='tod' id='hrp'>PM</div>
+				<br />
+				<div class='min' id='min1'></div>
+				<div class='min' id='min2'></div>
+				<div class='min' id='min3'></div>
+				<div class='min' id='min4'></div>
+				<div class='min' id='min5'></div>
+				<div class='min' id='min6'></div>
+				<br />
+				<div class='sec' id='sec1'></div>
+				<div class='sec' id='sec2'></div>
+				<div class='sec' id='sec3'></div>
+				<div class='sec' id='sec4'></div>
+				<div class='sec' id='sec5'></div>
+				<div class='sec' id='sec6'></div>
+			</div>
+			<div id='actime'>
+
+			</div>
+		</div>
 </html>
