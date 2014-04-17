@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 	<head><title>Snake</title>
 	<style type="text/css">
@@ -7,11 +8,11 @@
 		#gameover{
 			opacity: 0.5;
 			width: 300px;
-			height: 125px;
+			height: 150px;
 			border: 1px solid black;
 			position:absolute;
-			top: 200;
-			left: 250;
+			top: 200px;
+			left: 250px;
 			background: #9ECFF7;
 			font-size: 50px;
 			text-align: center;
@@ -28,8 +29,8 @@
 			width:200px;
 			height: 50px;
 			position:absolute;
-			top:10;
-			left: 10;
+			top:10px;
+			left: 10px;
 			font-size: 40px;
 			text-align: center;
 			border: 1px solid black;
@@ -37,18 +38,18 @@
 		}
 		#game{
 			position:absolute;
-			left:250;
-			top:150;
+			left:250px;
+			top:150px;
 			-webkit-box-shadow: 0px 0px 30px 0px rgba(48, 209, 255, 1);
 			-moz-box-shadow:    0px 0px 30px 0px rgba(48, 209, 255, 1);
 			box-shadow:         0px 0px 30px 0px rgba(48, 209, 255, 1);
 		}
 		.small{
-			font-size: 25;
+			font-size: 25px;
 		}
 		#title img{
-			height: 200;
-			width: 1350;
+			height: 200px;
+			width: 1350px;
 		}
 		#title p{
 			position : absolute;
@@ -72,7 +73,7 @@
 		</div>
 		<div id='game'>
 			<canvas id='can' width='800' height='500' ></canvas>
-			<div id='gameover'><b>Space</b><br /><span class='small'>Toggle gravity to move past gates</span></div>
+			<div id='gameover'><b>Space to toggle gravity</b></div>
 			<div id='scoreboard'>Score: <span class='score'>0</span></div>
 		</div>
 	</body>
