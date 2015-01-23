@@ -1,0 +1,10 @@
+body{
+  background-color: #efeeee;
+ }
+ div{
+ 	font-size: 1.7em;
+ }
+ #outer{
+ 	margin: 0 auto;
+ 	float : none;
+ }
