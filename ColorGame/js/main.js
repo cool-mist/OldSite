@@ -1,5 +1,6 @@
 $(document).keypress(keypress_handler);
 function keypress_handler(e){
+	e.keyCode=e.keyCode|e.which;
 	if(e.keyCode==97){
 		no();
 		game.state=1;
